@@ -1,38 +1,58 @@
+<div align="center">
+
 # SINGULARITY
 
 Demo for the tutorial on optimizing complex Three.js scenes while preserving quality
 
-![Image Title](./showcase.gif)
+![Singularity showcase](./showcase.gif)
 
-[Article on Codrops](https://tympanus.net/codrops/2025/02/11/building-efficient-three-js-scenes-optimize-performance-while-maintaining-quality/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/niccolofanton/codrops-singularity-demo?style=social)](https://github.com/niccolofanton/codrops-singularity-demo/stargazers)
 
-[Demo](https://singularity-codrops.netlify.app/)
+**[Live demo](https://codrops-singularity-demo.pages.dev)** · **[Article on Codrops](https://tympanus.net/codrops/2025/02/11/building-efficient-three-js-scenes-optimize-performance-while-maintaining-quality/)** · **[Mirror demo](https://singularity-codrops.netlify.app/)**
+
+</div>
 
 ## Installation
 
+This project uses Yarn (a `yarn.lock` is committed, so Yarn is the canonical path).
+
 Install dependencies:
 
-```
+```bash
 yarn
-
-npm install --force
 ```
 
-Compile the code for development and start a local server:
+Start a local development server:
 
-```
+```bash
 yarn dev
-
-npm run dev
 ```
 
-Create the build:
+Create a production build:
 
-```
+```bash
 yarn build
-
-npm run build 
 ```
+
+### Using npm instead
+
+If you prefer npm, note that the dev dependencies pin `eslint ^9` and `eslint-config-next 15.1.6` while the runtime uses `next 14.2.22`, which causes a peer-dependency conflict on install. You can work around it with `--force` (it skips the peer check; it does not change the installed runtime):
+
+```bash
+npm install --force
+npm run dev
+npm run build
+```
+
+## Tech stack
+
+- [Next.js 14](https://nextjs.org/) + TypeScript
+- [React Three Fiber](https://r3f.docs.pmnd.rs/) and [Drei](https://github.com/pmndrs/drei) for the Three.js scene
+- [@react-three/postprocessing](https://github.com/pmndrs/react-postprocessing) for visual effects
+- [@react-three/rapier](https://github.com/pmndrs/react-three-rapier) for physics
+- [Leva](https://github.com/pmndrs/leva) and [r3f-perf](https://github.com/utsuboco/r3f-perf) for live tweaking and performance monitoring
+- [Tailwind CSS](https://tailwindcss.com/)
 
 ## Credits
 
@@ -69,8 +89,3 @@ Follow Codrops: [Bluesky](https://bsky.app/profile/codrops.bsky.social), [Facebo
 [MIT](LICENSE)
 
 Made with :blue_heart:  by [Codrops](http://www.codrops.com)
-
-
-
-
-
